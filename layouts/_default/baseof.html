@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     {{- partial "head.html" . -}}
+    <head>
+        {{ $customCSS := resources.Get "/backgroundEffect.css" | resources.PostCSS }}
+        <link rel="stylesheet" href="{{ $customCSS.RelPermalink }}">
+    </head>
+
+    <canvas id="canvas"></canvas>
+    
     <body>
         <script type="text/javascript">
             // Immediately set theme on page load
@@ -11,5 +18,8 @@
         {{- block "main" . }}{{- end }}
         </main>
         {{- partial "footer.html" . -}}
+
+        {{ $customJS := resources.Get "/backgroundEffect.js" }}
+        <script src="{{ $customJS.RelPermalink }}"></script>
     </body>
 </html>
