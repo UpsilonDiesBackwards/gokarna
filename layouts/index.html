@@ -11,6 +11,62 @@
         <h3>{{ .Site.Params.Description }}</h3>
     {{ end }}
 
+    <!-- Add the centered text here -->
+    <div class="recent-posts-text">
+      <h2>Check out the most recent...</h2>
+    </div>
+
+    <div style="display: flex;">
+      <div style="flex: 1; margin-right: 20px;">
+        <h2>Blog post</h2>
+        <ul>
+          {{ range first 1 (where .Site.RegularPages "Params.type" "post") }}
+            <li>
+              <a href="{{ .Permalink }}">
+                <img class="showcase-image" src="{{ .Params.image }}" alt="Post Image" width="400" height="400">
+              </a>              
+              <div class="title" style="font-size: 24px;">
+                {{ .Title }}
+              </div>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+  
+        <div style="flex: 1; margin-right: 20px;">
+          <h2>Project update</h2>
+          <ul>
+            {{ range first 1 (where .Site.RegularPages "Params.type" "post") }}
+              <li>
+                <a href="{{ .Permalink }}">
+                  <img class="showcase-image" src="{{ .Params.image }}" alt="Post Image" width="400" height="400">
+                </a>              
+                <div class="title" style="font-size: 24px;">
+                  {{ .Title }}
+                </div>
+              </li>
+            {{ end }}
+          </ul>
+        </div>
+    
+        <div style="flex: 1;">
+          <h2>Tutorial</h2>
+        <ul>
+          {{ range first 1 (where .Site.RegularPages "Params.type" "post") }}
+          <li>
+                <a href="{{ .Permalink }}">
+                  <img class="showcase-image" src="{{ .Params.image }}" alt="Post Image" width="400" height="400">
+                </a>              
+                <div class="title" style="font-size: 24px;">
+                  {{ .Title }}
+                </div>
+          </li>
+          
+          {{ end }}
+        </ul>
+
+        </div>
+      </div>
 </section>
 
 <div class="flex-break"></div>
