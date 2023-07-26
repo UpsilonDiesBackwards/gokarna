@@ -16,11 +16,11 @@
       <h2>Check out the most recent...</h2>
     </div>
 
-    <div style="display: flex;">
-      <div style="flex: 1; margin-right: 20px;">
+    <div style="display: flex; ">
+      <div style="flex: 1; margin-right: 20px; align-self: center;">
         <h2>Blog post</h2>
         <ul>
-          {{ range first 1 (where .Site.RegularPages "Params.type" "post") }}
+          {{ range first 1 (where .Site.RegularPages "Params.category" "blog") }}
             <li>
               <a href="{{ .Permalink }}">
                 <img class="showcase-image" src="{{ .Params.image }}" alt="Post Image" width="400" height="400">
@@ -33,10 +33,10 @@
         </ul>
       </div>
   
-        <div style="flex: 1; margin-right: 20px;">
+        <div style="flex: 1; margin-right: 20px; align-self: center;">
           <h2>Project update</h2>
           <ul>
-            {{ range first 1 (where .Site.RegularPages "Params.type" "post") }}
+            {{ range first 1 (where .Site.RegularPages "Params.category" "project") }}
               <li>
                 <a href="{{ .Permalink }}">
                   <img class="showcase-image" src="{{ .Params.image }}" alt="Post Image" width="400" height="400">
@@ -49,10 +49,10 @@
           </ul>
         </div>
     
-        <div style="flex: 1;">
+        <div style="flex: 1; margin-right: 20px; align-self: center;">
           <h2>Tutorial</h2>
         <ul>
-          {{ range first 1 (where .Site.RegularPages "Params.type" "post") }}
+          {{ range first 1 (where .Site.RegularPages "Params.category" "tutorial") }}
           <li>
                 <a href="{{ .Permalink }}">
                   <img class="showcase-image" src="{{ .Params.image }}" alt="Post Image" width="400" height="400">
