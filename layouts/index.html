@@ -11,13 +11,13 @@
         <h3>{{ .Site.Params.Description }}</h3>
     {{ end }}
 
-    <!-- Add the centered text here -->
     <div class="recent-posts-text">
       <h2>Check out the most recent...</h2>
     </div>
 
-    <div style="display: flex; ">
-      <div style="flex: 1; margin-right: 20px; align-self: center;">
+    <!-- MOST RECENT POST SHOWCASE - I HAVE NO IDEA HOW TO READ THIS, MAY GOD HAVE MERCY ON YOUR SOUL -->
+    <div class="showcase-container" style="display: flex;">
+      <div class="showcase-element">
         <h2>Blog post</h2>
         <ul>
           {{ range first 1 (where .Site.RegularPages "Params.category" "blog") }}
@@ -32,41 +32,38 @@
           {{ end }}
         </ul>
       </div>
-  
-        <div style="flex: 1; margin-right: 20px; align-self: center;">
-          <h2>Project update</h2>
-          <ul>
-            {{ range first 1 (where .Site.RegularPages "Params.category" "project") }}
-              <li>
-                <a href="{{ .Permalink }}">
-                  <img class="showcase-image" src="{{ .Params.image }}" alt="Post Image" width="400" height="400">
-                </a>              
-                <div class="title" style="font-size: 24px;">
-                  {{ .Title }}
-                </div>
-              </li>
-            {{ end }}
-          </ul>
-        </div>
-    
-        <div style="flex: 1; margin-right: 20px; align-self: center;">
-          <h2>Tutorial</h2>
+      <div class="showcase-element">
+        <h2>Project update</h2>
         <ul>
-          {{ range first 1 (where .Site.RegularPages "Params.category" "tutorial") }}
-          <li>
-                <a href="{{ .Permalink }}">
-                  <img class="showcase-image" src="{{ .Params.image }}" alt="Post Image" width="400" height="400">
-                </a>              
-                <div class="title" style="font-size: 24px;">
-                  {{ .Title }}
-                </div>
-          </li>
-          
+          {{ range first 1 (where .Site.RegularPages "Params.category" "project") }}
+            <li>
+              <a href="{{ .Permalink }}">
+                <img class="showcase-image" src="{{ .Params.image }}" alt="Post Image" width="400" height="400">
+              </a>              
+              <div class="title" style="font-size: 24px;">
+                {{ .Title }}
+              </div>
+            </li>
           {{ end }}
         </ul>
-
-        </div>
       </div>
+    
+      <div class="showcase-element">
+        <h2>Tutorial</h2>
+        <ul>
+          {{ range first 1 (where .Site.RegularPages "Params.category" "tutorial") }}
+            <li>
+              <a href="{{ .Permalink }}">
+                <img class="showcase-image" src="{{ .Params.image }}" alt="Post Image" width="400" height="400">
+              </a>              
+              <div class="title" style="font-size: 24px;">
+                {{ .Title }}
+              </div>
+            </li>  
+          {{ end }}
+        </ul>
+      </div>
+    </div>
 </section>
 
 <div class="flex-break"></div>
