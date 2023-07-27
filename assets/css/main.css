@@ -624,3 +624,24 @@ table td {
 .prev-post, .next-post {
   max-width: 33%;
 }
+
+#canvas {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 15%;
+	z-index: -1;
+
+	background-image: radial-gradient(#f5f5f5 60%, #e1e1e1 80%, #b0b0b0 100%);
+}
+
+
+.showcase-image {
+	border: 1px solid black;
+	transition: transform 0.1s ease;
+
+	width: 300px;
+	height: 300px;
+}

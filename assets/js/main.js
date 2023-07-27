@@ -19,6 +19,9 @@ const HEADING_TO_TOC_CLASS = {
     'H4': 'level-4'
 }
 
+const darkModeGridColor = "rgba(255, 255, 255, ";
+const lightModeGridColor = "rgba(0, 0, 0, ";
+
 function ready() {
     feather.replace({ 'stroke-width': 1, width: 20, height: 20 });
     setThemeByUserPref();

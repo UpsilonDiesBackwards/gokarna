@@ -21,14 +21,15 @@
         <h2>Blog post</h2>
         <ul>
           {{ range first 1 (where .Site.RegularPages "Params.category" "blog") }}
-            <li>
+          <li>
+            <a href="{{ .Permalink }}">
               <a href="{{ .Permalink }}">
                 <img class="showcase-image" src="{{ .Params.image }}" alt="Post Image" width="400" height="400">
-              </a>              
-              <div class="title" style="font-size: 24px;">
-                {{ .Title }}
-              </div>
-            </li>
+              </a>
+            <div class="title" style="font-size: 24px;">
+              {{ .Title }}
+            </div>
+          </li>
           {{ end }}
         </ul>
       </div>
@@ -38,8 +39,9 @@
           {{ range first 1 (where .Site.RegularPages "Params.category" "project") }}
             <li>
               <a href="{{ .Permalink }}">
-                <img class="showcase-image" src="{{ .Params.image }}" alt="Post Image" width="400" height="400">
-              </a>              
+                <a href="{{ .Permalink }}">
+                  <img class="showcase-image" src="{{ .Params.image }}" alt="Post Image" width="400" height="400">
+                </a>
               <div class="title" style="font-size: 24px;">
                 {{ .Title }}
               </div>
@@ -54,7 +56,7 @@
           {{ range first 1 (where .Site.RegularPages "Params.category" "tutorial") }}
             <li>
               <a href="{{ .Permalink }}">
-                <img class="showcase-image" src="{{ .Params.image }}" alt="Post Image" width="400" height="400">
+                  <img class="showcase-image" src="{{ .Params.image }}" alt="Post Image" width="400" height="400">
               </a>              
               <div class="title" style="font-size: 24px;">
                 {{ .Title }}
@@ -105,6 +107,6 @@
         {{ end }}
     {{ end }}
     </div>
-
+    
 {{ end }}
 {{ end }}
