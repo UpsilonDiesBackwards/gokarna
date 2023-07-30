@@ -107,6 +107,14 @@ pre {
 	height: 300px;
 }
 
+hr.divider {
+  border: none;
+  height: 1px;
+  background-color: #a6a6a6;
+  margin: 35px 0;
+}
+
+
 /* TODO: Check if this is needed or not */
 /* 
 img,
