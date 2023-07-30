@@ -647,7 +647,7 @@ table td {
 
 hr.divider {
   border: none;
-  height: 1px;
+  height: 3px;
   background-color: #ededed;
   margin: 35px 0;
 }
