@@ -2,8 +2,8 @@
 <html lang="en">
     {{- partial "head.html" . -}}
     <head>
-        {{ $customCSS := resources.Get "theme_override.css" | css.PostCSS }}
-        <link rel="stylesheet" href="{{ $customCSS.RelPermalink }}">
+        // {{ $customCSS := resources.Get "theme_override.css" | css.PostCSS }}
+        <link rel="stylesheet" href="{{ resources.Get "theme_override.css" | relURL }}">
     </head>
 
     <canvas id="canvas"></canvas>
