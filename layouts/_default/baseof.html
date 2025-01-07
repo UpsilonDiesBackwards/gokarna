@@ -2,7 +2,7 @@
 <html lang="en">
     {{- partial "head.html" . -}}
     <head>
-        {{ $customCSS := resources.Get "/theme_override.css" | resources.PostCSS }}
+        {{ $customCSS := resources.Get "/theme_override.css" | css.PostCSS }}
         <link rel="stylesheet" href="{{ $customCSS.RelPermalink }}">
     </head>
 
