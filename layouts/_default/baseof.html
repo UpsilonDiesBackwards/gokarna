@@ -2,8 +2,7 @@
 <html lang="en">
     {{- partial "head.html" . -}}
     <head>
-        // {{ $customCSS := resources.Get "theme_override.css" | css.PostCSS }}
-        <link rel="stylesheet" href="{{ resources.Get "theme_override.css" | relURL }}">
+        <link rel="stylesheet" href="{{ resources.Get "assets/theme_override.css" | relURL }}">
     </head>
 
     <canvas id="canvas"></canvas>
@@ -19,7 +18,6 @@
         </main>
         {{- partial "footer.html" . -}}
 
-        {{ $customJS := resources.Get "/backgroundEffect.js" }}
-        <script src="{{ $customJS.RelPermalink }}"></script>
+        <script src="{{ resources.Get "assets/backgroundEffect.js" | relURL }}"></script>
     </body>
 </html>
