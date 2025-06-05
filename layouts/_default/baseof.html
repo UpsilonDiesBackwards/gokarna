@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
     {{- partial "head.html" . -}}
-    <head>
-        <link rel="stylesheet" href="{{ resources.Get "assets/theme_override.css" | relURL }}">
-    </head>
-
+    <link rel="stylesheet" href="{{ resources.Get "assets/theme_override.css" | relURL }}">
+</head>
+<body>
     <canvas id="canvas"></canvas>
-    
-    <body>
-        <script type="text/javascript">
-            // Immediately set theme on page load
-            setThemeByUserPref();
-        </script>
-        {{- partial "header.html" . -}}
-        <main id="content">
-        {{- block "main" . }}{{- end }}
-        </main>
-        {{- partial "footer.html" . -}}
 
-        <script src="{{ resources.Get "/backgroundEffect.js" | relURL }}"></script>
-    </body>
+    <script type="text/javascript">
+        setThemeByUserPref();
+    </script>
+
+    {{- partial "header.html" . -}}
+
+    <main id="content">
+        {{- block "main" . }}{{- end }}
+    </main>
+
+    {{- partial "footer.html" . -}}
+
+    <script src="/backgroundEffect.js"></script>
+</body>
 </html>
